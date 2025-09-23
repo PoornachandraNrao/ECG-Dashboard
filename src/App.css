@@ -1,0 +1,45 @@
+/* Global layout styles for App pages */
+
+/* Hero Section */
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--muted);
+  max-width: 640px;
+  text-align: center;
+  margin: 0 auto 20px auto;
+}
+
+/* Patients page layout */
+.dashboard-container {
+  display: flex;
+  gap: 20px;
+  padding-top: 100px;
+  min-height: 80vh;
+}
+
+/* About page */
+.about-container {
+  padding-top: 100px;
+  text-align: center;
+}
+
+.about-container h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.about-description {
+  font-size: 16px;
+  color: var(--muted);
+  max-width: 700px;
+  margin: 0 auto 40px; /* centers the paragraph */
+  text-align: center;  /* centers text */
+}

@@ -1,0 +1,71 @@
+/* ECG.css - styling for the ECG component */
+.ecg-card {
+  padding: 14px;
+  margin-top: 8px;
+}
+
+/* small title above svg */
+.ecg-title {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* container with dark background like original */
+.ecg-container {
+  border-radius: 10px;
+  padding: 10px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.9), rgba(0,0,0,0.85));
+  overflow: hidden;
+}
+
+/* svg sizing */
+.ecg-svg {
+  width: 100%;
+  height: 180px;
+  display: block;
+}
+
+/* grid stroke fade */
+.grid-rect {
+  opacity: 0.18;
+  transition: opacity 350ms ease;
+  stroke: var(--ecg-stroke);
+}
+
+/* animated ECG line */
+.ecg-line {
+  stroke: var(--ecg-stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  transition: stroke 300ms ease;
+  animation: drawECG 2.4s linear infinite;
+}
+
+/* reduce-motion respects */
+@media (prefers-reduced-motion: reduce) {
+  .ecg-line {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* draw animation */
+@keyframes drawECG {
+  0% {
+    stroke-dashoffset: 1200;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* responsive tweak */
+@media (max-width: 640px) {
+  .ecg-svg {
+    height: 140px;
+  }
+}
