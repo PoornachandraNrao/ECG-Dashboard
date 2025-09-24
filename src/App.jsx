@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import Dashboard from "./sections/Dashboard";
 import Team from "./sections/Team";
 
+
 import "./index.css";
 import "./App.css";
 
@@ -80,7 +81,7 @@ function App() {
                 name: "Dr. Rekha Bhandarkar",
                 role: "Project Coordinator",
                 meta: "Deputy Registrar Nitte",
-                img: "src/assets/Team/mam.jpg",
+                img: "public/Team/mam.jpg",
               },
             ]}
           />
@@ -93,25 +94,25 @@ function App() {
                 name: "Ashwij",
                 role: "NNM22EC027",
                 meta: "TI cracker. Opamp Lover",
-                img: "src/assets/Team/mem2.png",
+                img: "public/Team/mem2.png",
               },
               {
                 name: "B Karan",
                 role: "NNM22EC032",
                 meta: "Mirafra cracked. Samsung waiting",
-                img: "src/assets/Team/mem3.png",
+                img: "public/Team/mem3.png",
               },
               {
                 name: "Hrishikesh B",
                 role: "NNM22EC061",
                 meta: "Higher studies is an option",
-                img: "src/assets/Team/mem4.png",
+                img: "public/Team/mem4.png",
               },
               {
                 name: "Poornachandra N Rao",
                 role: "NNM22EC108",
                 meta: "No work",
-                img: "src/assets/Team/mem5.jpg",
+                img: "public/Team/mem5.jpg",
               },
             ]}
           />
