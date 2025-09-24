@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";   
-import ECG from "./sections/ECG";
-import PatientList from "./sections/PatientList";
-import Vitals from "./sections/Vitals";
+import Dashboard from "./sections/Dashboard";
 import Team from "./sections/Team";
 
 import "./index.css";
@@ -61,60 +59,9 @@ function App() {
       {page === "home" && (
         <Hero onNavigate={() => setPage("patients")} />  
       )}
-      
 
-      {page === "patients" && (
-        <div
-          className="container"
-          style={{
-            display: "flex",
-            gap: "20px",
-            paddingTop: "100px",
-            minHeight: "80vh",
-          }}
-        >
-          {/* Sidebar patient list */}
-          <PatientList
-            patients={patientsData}
-            selectedId={selectedPatientId}
-            onSelect={setSelectedPatientId}
-          />
+      {page === "patients" && <Dashboard />}
 
-          {/* Dashboard area */}
-          <main style={{ flex: 1 }}>
-            {!selectedPatient ? (
-              <p className="muted">Select a patient to view details and ECG</p>
-            ) : (
-              <>
-                <div
-                  className="card"
-                  style={{ padding: "16px", marginBottom: "20px" }}
-                >
-                  <h2>{selectedPatient.name}</h2>
-                  <p className="muted">Patient ID: {selectedPatient.id}</p>
-                  <p>
-                    Status:{" "}
-                    <span
-                      style={{
-                        color:
-                          selectedPatient.status === "Active"
-                            ? "var(--success)"
-                            : "#f59e0b",
-                      }}
-                    >
-                      {selectedPatient.status}
-                    </span>
-                  </p>
-                </div>
-
-                {/* ECG + Vitals */}
-                <ECG />
-                <Vitals data={selectedPatient} />
-              </>
-            )}
-          </main>
-        </div>
-      )}
 
       {page === "about" && (
         <section className="container" style={{ paddingTop: "100px", textAlign: "center" }}>

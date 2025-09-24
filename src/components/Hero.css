@@ -25,7 +25,6 @@
 }
 
 .hero-icon {
-
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -39,7 +38,6 @@
   box-shadow: 0 18px 34px rgba(14, 165, 233, 0.08);
   margin: 0 auto;
   text-align: center;
-  
 }
 
 .hero-title {
@@ -142,14 +140,40 @@
   color: #7c3aed;
 }
 
-@media (max-width: 768px) {
+/* Tablet adjustments */
+@media (max-width: 1024px) {
   .hero-title {
-    font-size: 32px;
+    font-size: 36px;
   }
   .hero-subtitle {
     font-size: 16px;
   }
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  .hero-inner {
+    flex-direction: column; /* stack icon + text */
+    text-align: center;
+  }
+
+  .hero-left {
+    text-align: center;
+  }
+
+  .hero-icon {
+    margin-bottom: 20px;
+  }
+
   .illustration img {
-    max-width: 320px;
+    max-width: 300px;
+  }
+
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-subtitle {
+    font-size: 15px;
   }
 }

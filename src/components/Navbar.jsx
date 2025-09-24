@@ -24,10 +24,16 @@ const Navbar = ({ onNavigate }) => {
     localStorage.setItem("theme", isDark ? "dark" : "light");
   };
 
+  // navigation handler (closes mobile menu after click)
+  const handleNavigate = (page) => {
+    onNavigate(page);
+    setMobileOpen(false); // auto close on click
+  };
+
   return (
     <nav className="navbar">
       <div className="container">
-        {/* Logo + Brand */}
+        {/* Brand */}
         <div className="brand">
           <div className="logo">
             <i className="fas fa-heartbeat"></i>
@@ -37,13 +43,13 @@ const Navbar = ({ onNavigate }) => {
 
         {/* Desktop Menu */}
         <div className="navlinks">
-          <button className="nav-link" onClick={() => onNavigate("home")}>
+          <button className="nav-link" onClick={() => handleNavigate("home")}>
             Home
           </button>
-          <button className="nav-link" onClick={() => onNavigate("patients")}>
+          <button className="nav-link" onClick={() => handleNavigate("patients")}>
             Patient Details
           </button>
-          <button className="nav-link" onClick={() => onNavigate("about")}>
+          <button className="nav-link" onClick={() => handleNavigate("about")}>
             About Us
           </button>
           <button
@@ -55,9 +61,10 @@ const Navbar = ({ onNavigate }) => {
           </button>
         </div>
 
-        {/* Mobile Button */}
+        {/* Mobile Toggle */}
         <button
           className="mobile-toggle"
+          aria-label="Menu"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           <i className="fas fa-bars"></i>
@@ -67,13 +74,13 @@ const Navbar = ({ onNavigate }) => {
       {/* Mobile Menu */}
       {mobileOpen && (
         <div className="mobile-menu">
-          <button className="nav-link" onClick={() => onNavigate("home")}>
+          <button className="nav-link" onClick={() => handleNavigate("home")}>
             Home
           </button>
-          <button className="nav-link" onClick={() => onNavigate("patients")}>
+          <button className="nav-link" onClick={() => handleNavigate("patients")}>
             Patient Details
           </button>
-          <button className="nav-link" onClick={() => onNavigate("about")}>
+          <button className="nav-link" onClick={() => handleNavigate("about")}>
             About Us
           </button>
           <button

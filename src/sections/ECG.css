@@ -1,4 +1,4 @@
-/* ECG.css - styling for the ECG component */
+/* ECG card wrapper */
 .ecg-card {
   padding: 14px;
   margin-top: 8px;
@@ -12,7 +12,7 @@
   color: var(--text);
 }
 
-/* container with dark background like original */
+/* container with dark background */
 .ecg-container {
   border-radius: 10px;
   padding: 10px;
@@ -45,7 +45,7 @@
   animation: drawECG 2.4s linear infinite;
 }
 
-/* reduce-motion respects */
+/* reduce-motion support */
 @media (prefers-reduced-motion: reduce) {
   .ecg-line {
     animation: none;
@@ -63,9 +63,26 @@
   }
 }
 
-/* responsive tweak */
+/* 🔹 Responsive adjustments */
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .ecg-svg {
+    height: 160px;
+  }
+
+  .ecg-title {
+    font-size: 15px;
+  }
+}
+
+/* Mobile (≤640px) */
 @media (max-width: 640px) {
   .ecg-svg {
     height: 140px;
+  }
+
+  .ecg-title {
+    font-size: 14px;
   }
 }

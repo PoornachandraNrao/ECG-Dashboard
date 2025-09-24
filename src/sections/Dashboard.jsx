@@ -46,18 +46,20 @@ const Dashboard = () => {
     <section className="dashboard container">
       <div className="layout">
         {/* Sidebar */}
-        <PatientList
-          patients={patientsData}
-          selectedId={selectedPatientId}
-          onSelect={setSelectedPatientId}
-        />
+        <div className="sidebar">
+          <PatientList
+            patients={patientsData}
+            selectedId={selectedPatientId}
+            onSelect={setSelectedPatientId}
+          />
+        </div>
 
         {/* Main Content */}
         <main className="main">
           {!selectedPatient ? (
             <div className="placeholder">
               <h1>Patient Dashboard</h1>
-              <p>Select a patient from the left to view details and live ECG.</p>
+              
             </div>
           ) : (
             <>

@@ -64,3 +64,59 @@
   font-size: 13px;
   color: var(--muted);
 }
+
+/* 🔹 Responsive adjustments */
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .team-title {
+    font-size: 24px;
+  }
+
+  .team-card {
+    max-width: 220px;
+    padding: 16px;
+  }
+
+  .avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .team-card h4 {
+    font-size: 16px;
+  }
+}
+
+/* Mobile (≤640px) */
+@media (max-width: 640px) {
+  .team-title {
+    font-size: 22px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr; /* stack cards vertically */
+  }
+
+  .team-card {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .team-card h4 {
+    font-size: 15px;
+  }
+
+  .team-card .role {
+    font-size: 13px;
+  }
+
+  .team-card .meta {
+    font-size: 12px;
+  }
+}

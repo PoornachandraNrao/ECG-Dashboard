@@ -41,3 +41,31 @@
   font-size: 14px;
   color: var(--muted);
 }
+
+/* 🔹 Responsive adjustments */
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .vital .value {
+    font-size: 20px;
+  }
+}
+
+/* Mobile (≤640px) */
+@media (max-width: 640px) {
+  .vitals-grid {
+    grid-template-columns: 1fr; /* stack vitals vertically */
+  }
+
+  .vital {
+    padding: 12px;
+  }
+
+  .vital .value {
+    font-size: 18px;
+  }
+
+  .vital p {
+    font-size: 13px;
+  }
+}

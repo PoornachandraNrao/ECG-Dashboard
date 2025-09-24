@@ -1,3 +1,6 @@
+/* ========================= */
+/* Navbar Base */
+/* ========================= */
 .navbar {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
@@ -6,12 +9,13 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 50;
   height: 64px;
+  z-index: 100;
   display: flex;
-  align-items: center;
+  align-items: center; /* vertical centering */
 }
 
+/* Container inside navbar */
 .navbar .container {
   display: flex;
   align-items: center;
@@ -19,13 +23,18 @@
   max-width: 1120px;
   margin: 0 auto;
   padding: 0 16px;
+  width: 100%;
 }
 
+
+
+/* ========================= */
+/* Brand (Logo + Text) */
+/* ========================= */
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-right: auto;
+  gap: 10px;
 }
 
 .logo {
@@ -44,12 +53,17 @@
   font-size: 20px;
   font-weight: 700;
   color: var(--primary);
+  line-height: 1;
 }
 
+
+/* ========================= */
+/* Desktop Navigation */
+/* ========================= */
 .navlinks {
   display: flex;
-  gap: 16px;
   align-items: center;
+  gap: 16px;
 }
 
 .nav-link {
@@ -72,44 +86,66 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
   border: 1px solid var(--border);
   background: var(--glass);
   cursor: pointer;
+  font-size: 16px;
+  color: var(--text);
 }
 
+/* ========================= */
+/* Mobile Toggle + Menu */
+/* ========================= */
 .mobile-toggle {
   display: none;
   background: transparent;
   border: none;
-  font-size: 20px;
+  font-size: 22px;
   cursor: pointer;
+  color: var(--text);
 }
 
 .mobile-menu {
   display: none;
+  flex-direction: column;
   background: var(--surface);
   border-top: 1px solid var(--border);
   padding: 12px 16px;
+  position: absolute;
+  top: 64px; /* right under navbar */
+  left: 0;
+  width: 100%;
+  z-index: 99;
 }
 
 .mobile-menu .nav-link {
-  display: block;
-  width: 100%;
   text-align: left;
-  margin-bottom: 8px;
+  margin: 6px 0;
+}
+
+/* ========================= */
+/* Responsive Breakpoints */
+/* ========================= */
+@media (max-width: 1024px) {
+  .brand-text {
+    font-size: 18px;
+  }
+  .nav-link {
+    font-size: 15px;
+  }
 }
 
 @media (max-width: 768px) {
   .navlinks {
-    display: none;
+    display: none; /* hide desktop links */
   }
   .mobile-toggle {
-    display: inline-flex;
+    display: inline-flex; /* show hamburger */
   }
   .mobile-menu {
-    display: block;
+    display: flex; /* show dropdown */
   }
 }

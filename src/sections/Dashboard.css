@@ -1,57 +1,40 @@
+/* Dashboard.css */
+
+/* Page padding for navbar */
 .dashboard {
   padding-top: 90px;
   padding-bottom: 40px;
 }
 
+/* ===================== */
+/* Desktop layout: sidebar left, main right */
+/* ===================== */
+.dashboard.container {
+  display: block;   /* reset any global flex/grid from .container */
+  width: 100%;
+  margin-top: 80px; /* 64px navbar + 16px extra breathing space */
+}
+
 .layout {
   display: flex;
+  flex-direction: row;
   gap: 20px;
+  align-items: flex-start;
 }
 
 .sidebar {
   width: 280px;
-}
-
-.patient-list {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.patient-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px;
-  border-radius: 10px;
-  background: var(--surface);
-  border: 1px solid rgba(15, 23, 42, 0.06);
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.patient-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 30px rgba(2, 6, 23, 0.08);
-}
-.patient-item.active {
-  background: linear-gradient(
-    90deg,
-    rgba(14, 165, 233, 0.07),
-    rgba(124, 58, 237, 0.07)
-  );
-  border-left: 4px solid var(--primary);
-}
-
-.status-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+  flex-shrink: 0;
 }
 
 .main {
   flex: 1;
+  width: auto;
 }
 
+/* ===================== */
+/* Placeholders / Patient info */
+/* ===================== */
 .placeholder {
   text-align: center;
   color: var(--muted);
@@ -61,10 +44,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.patient-info h2 {
-  margin: 0;
+  padding: 20px;       
 }
 
 .status {
@@ -73,6 +53,9 @@
   align-items: center;
 }
 
+/* ===================== */
+/* ECG Section */
+/* ===================== */
 .ecg-card {
   margin-top: 20px;
 }
@@ -80,11 +63,7 @@
 .ecg-container {
   border-radius: 8px;
   padding: 10px;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.9),
-    rgba(0, 0, 0, 0.85)
-  );
+  background: linear-gradient(180deg, rgba(0,0,0,0.9), rgba(0,0,0,0.85));
   overflow: hidden;
 }
 
@@ -103,14 +82,13 @@
 }
 
 @keyframes drawECG {
-  0% {
-    stroke-dashoffset: 1200;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
+  0%   { stroke-dashoffset: 1200; }
+  100% { stroke-dashoffset: 0; }
 }
 
+/* ===================== */
+/* Vitals Section */
+/* ===================== */
 .vitals-section {
   margin-top: 20px;
 }
@@ -130,26 +108,66 @@
   box-shadow: var(--card-shadow);
   transition: transform 0.2s ease;
 }
+
 .vital:hover {
   transform: translateY(-5px);
 }
 
 .vital .value {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   color: var(--text);
+  display: block;
+  margin-bottom: 6px;
 }
+
 .vital p {
-  margin: 6px 0 0;
+  margin: 0;
   font-size: 14px;
   color: var(--muted);
 }
 
-@media (max-width: 900px) {
+/* ===================== */
+/* Responsive adjustments */
+/* ===================== */
+
+/* Tablet + Mobile */
+@media (max-width: 1024px) {
   .layout {
-    flex-direction: column;
+    flex-direction: column;   /* stack vertically */
+    align-items: stretch;
+    gap: 18px;
   }
+
   .sidebar {
-    width: 100%;
+    width: 100%;              /* full width */
+    margin-bottom: 20px;      /* gap before main */
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  .main {
+    width: 100%;              /* full width */
+  }
+}
+
+/* Mobile tweaks */
+@media (max-width: 640px) {
+  .patient-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .ecg-svg {
+    height: 140px;
+  }
+
+  .vitals-grid {
+    grid-template-columns: 1fr; /* stack vitals */
+  }
+
+  .vital .value {
+    font-size: 18px;
   }
 }
