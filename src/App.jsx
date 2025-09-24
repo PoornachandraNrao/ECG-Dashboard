@@ -4,6 +4,12 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";   
 import Dashboard from "./sections/Dashboard";
 import Team from "./sections/Team";
+import mem1 from "./assets/Team/mem1.jpg";
+import mem2 from "./assets/Team/mem2.png";
+import mem3 from "./assets/Team/mem3.png";
+import mem4 from "./assets/Team/mem4.png";
+import mem5 from "./assets/Team/mem5.jpg";
+
 
 
 import "./index.css";
@@ -81,38 +87,38 @@ function App() {
                 name: "Dr. Rekha Bhandarkar",
                 role: "Project Coordinator",
                 meta: "Deputy Registrar Nitte",
-                img: "public/Team/mam.jpg",
+                img: mem1,
               },
             ]}
           />
 
           {/* Development Team */}
           <Team
-            title="Development Team"
+            title="Project Team"
             members={[
               {
                 name: "Ashwij",
                 role: "NNM22EC027",
                 meta: "TI cracker. Opamp Lover",
-                img: "public/Team/mem2.png",
+                img: mem2,
               },
               {
                 name: "B Karan",
                 role: "NNM22EC032",
                 meta: "Mirafra cracked. Samsung waiting",
-                img: "public/Team/mem3.png",
+                img: mem3,
               },
               {
                 name: "Hrishikesh B",
                 role: "NNM22EC061",
                 meta: "Higher studies is an option",
-                img: "public/Team/mem4.png",
+                img: mem4,
               },
               {
                 name: "Poornachandra N Rao",
                 role: "NNM22EC108",
                 meta: "No work",
-                img: "public/Team/mem5.jpg",
+                img: mem5,
               },
             ]}
           />
